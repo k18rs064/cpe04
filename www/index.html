@@ -183,6 +183,7 @@
     function btnAClick(e){
       active=true;
       startTime=new Date();
+      $("body").css("backgroundColor","yellow")
 
         
         
@@ -191,7 +192,7 @@
     // ButtonBがクリックされた時の処理
     function btnBClick(e){
       active=false;
-        
+       $("body").css("backgroundColor","green")  
         
     }
 
@@ -202,6 +203,7 @@
         period = 60* parseInt( $("#minute").val() ) + parseInt( $("#second").val() );
         $("#time").html("経過時間： 0");
         $("#remain").html("残り時間： " + period);
+         $("body").css("backgroundColor","pink")
         
     }
     
@@ -214,8 +216,11 @@
       $("#time").html("経過時間： " + time);
       $("#remain").html("残り時間： " + rest);
       analog(rest);
-      
+
  } 
+ if (time>rest){
+    $("body").css("backgroundColor","purple")
+ }
  if(rest<=0){
         active=false;
         alarm();
